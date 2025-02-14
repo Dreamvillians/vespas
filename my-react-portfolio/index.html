@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/my-react-portfolio/src/assets/background/veelogo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vespas Portfolio</title>
+    <!-- WhatsApp Chat Widget -->
+<style>
+  /* Style for the WhatsApp button */
+  .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      z-index: 1000; /* Keeps the button on top of other elements */
+      transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+
+  .whatsapp-button:hover {
+      background-color: #1DAE4C; /* Darker green on hover */
+  }
+
+  .whatsapp-button img {
+      width: 30px;
+      height: 30px;
+  }
+</style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+  <script>
+    window.__wa = window.__wa || {};
+    window.__wa.phone = "+27685782474"; // Your WhatsApp number in international format
+    window.__wa.message = "Hello! I would like to know more about your work."; // Predefined message when the user clicks the widget
+  
+    (function(n, t) {
+        var waButton = document.createElement("a");
+        waButton.className = "whatsapp-button"; // Assign class for styling
+        waButton.href = `https://wa.me/${window.__wa.phone}?text=${encodeURIComponent(window.__wa.message)}`;
+        waButton.target = "_blank"; // Opens WhatsApp in a new tab
+        waButton.innerHTML = `<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">`;
+  
+        // Append the button to the body
+        document.body.appendChild(waButton);
+    })(window, document);
+  </script>
+  
+  <noscript>
+    <a href="https://wa.me/+27685782474?text=Hello! I would like to know more about your services." target="_blank">Chat with us on WhatsApp</a>
+  </noscript>
+  <!-- End of WhatsApp Chat Widget -->
+  
+</html>
